@@ -1,18 +1,25 @@
+// import { StrictMode } from "react";
+// import { createRoot } from "react-dom/client";
+// import "./index.css";
+// import { RouterProvider } from "react-router-dom";
+// import { router } from "./Routes/Routes";
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <StrictMode>
+//     <RouterProvider router={router} />
+//   </StrictMode>
+// );
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"; // Correct import
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Routes/Routes"; // Ensure your router is properly defined
 
-import App from "./App.jsx";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
-
+// Create the root and render the app
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <div className="max-w-7xl mx-auto">
+      <RouterProvider router={router} />
+    </div>
   </StrictMode>
 );
